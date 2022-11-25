@@ -23,21 +23,23 @@ public class RMIClient
 			PatientInterface patient = (PatientInterface) registry.lookup("patient");
 			
 			// Display the current student details
-			System.out.println("Student details:");
+			System.out.println("Patient details:");
 			System.out.println("Name: " + patient.getName());
-			System.out.println("Matric: " + patient.getSurname());
-			System.out.println("Programme: " + patient.getNhsRegistrationNo());
-			
-			// Change the student details
-			System.out.print("Enter new student name: ");
-			String name = input.readLine();
-			patient.setName(name);
-			System.out.print("Enter new student matric: ");
-			String matric = input.readLine();
-			patient.setSurname(matric);
-			System.out.print("Enter new student programme: ");
-			String programme = input.readLine();
-			patient.setNhsRegistrationNo(Integer.parseInt(programme));
+			System.out.println("Surname: " + patient.getSurname());
+			System.out.println("NHS number: " + patient.getNhsRegistrationNo());
+			System.out.println("Address: " + patient.getAddress());
+			System.out.println("Medical condition: " + patient.getMedicalCondition());
+
+//			// Change the student details
+//			System.out.print("Enter new student name: ");
+//			String name = input.readLine();
+//			patient.setName(name);
+//			System.out.print("Enter new student matric: ");
+//			String matric = input.readLine();
+//			patient.setSurname(matric);
+//			System.out.print("Enter new student programme: ");
+//			String programme = input.readLine();
+//			patient.setNhsRegistrationNo(Integer.parseInt(programme));
 		}
 		catch (IOException ioe)
 		{
