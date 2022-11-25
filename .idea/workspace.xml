@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="598226e9-c17e-4bd6-999c-850c40d52113" name="Changes" comment="Hospital - RMI working">
+    <list default="true" id="598226e9-c17e-4bd6-999c-850c40d52113" name="Changes" comment="Hospital - receiving working">
+      <change afterPath="$PROJECT_DIR$/src/Callout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CalloutInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RMIClientCallout.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApplicationTier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApplicationTier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RMIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RMIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataTier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PresentationTier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PresentationTier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +46,12 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.RMIClientCallout">
     <configuration name="RMIClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RMIClient" />
       <module name="KMSHospital" />
@@ -51,8 +59,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RMIClientCallout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RMIClientCallout" />
+      <module name="KMSHospital" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RMIClientCallout" />
         <item itemvalue="Application.RMIClient" />
       </list>
     </recent_temporary>
@@ -73,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668705176693</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Hospital - receiving working">
+      <created>1669381709625</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669381709625</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +113,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Hospital - RMI working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hospital - RMI working" />
+    <MESSAGE value="Hospital - receiving working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hospital - receiving working" />
   </component>
 </project>

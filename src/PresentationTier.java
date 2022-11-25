@@ -8,7 +8,8 @@ public class PresentationTier {
             System.out.println("");
             System.out.println("1. Show patient's records");
             System.out.println("2. Send patient's records to ambulance smartphone");
-            System.out.println("2. Exit program");
+            System.out.println("3. Receive callout details and update patients records with them");
+            System.out.println("4. Exit program");
 
             Scanner scanner = new Scanner(System.in);  // Create a Scanner object
 
