@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="598226e9-c17e-4bd6-999c-850c40d52113" name="Changes" comment="Hospital - receiving working">
-      <change afterPath="$PROJECT_DIR$/src/Callout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CalloutInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RMIClientCallout.java" afterDir="false" />
+    <list default="true" id="598226e9-c17e-4bd6-999c-850c40d52113" name="Changes" comment="Hospital - callout receiving working">
+      <change afterPath="$PROJECT_DIR$/src/ApplicationTier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Callout.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CalloutInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataTier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hospital.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Patient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PatientInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PresentationTier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RMIClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RMIClientCallout.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataTier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ApplicationTier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApplicationTier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PresentationTier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PresentationTier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RMIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RMIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RMIServer.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +60,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RMIClientCallout">
+  <component name="RunManager" selected="Application.Hospital">
+    <configuration name="Hospital" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Hospital" />
+      <module name="KMSHospital" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RMIClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RMIClient" />
       <module name="KMSHospital" />
@@ -68,6 +84,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Hospital" />
         <item itemvalue="Application.RMIClientCallout" />
         <item itemvalue="Application.RMIClient" />
       </list>
@@ -96,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669381709625</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Hospital - callout receiving working">
+      <created>1669401543360</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669401543360</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,6 +138,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Hospital - RMI working" />
     <MESSAGE value="Hospital - receiving working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hospital - receiving working" />
+    <MESSAGE value="Hospital - callout receiving working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hospital - callout receiving working" />
   </component>
 </project>
