@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DataTier {
 
@@ -28,32 +25,60 @@ public class DataTier {
     public void createTable() throws SQLException {
         try {
             Connection conn = getConnection();
-            PreparedStatement create = conn.prepareStatement("CREATE TABLE `kms`.`callout` ( `name` VARCHAR(255) NOT NULL , `surname` VARCHAR(255) NOT NULL , `acc_desc` VARCHAR(255) NOT NULL , `datetime` TIMESTAMP NOT NULL , `location` VARCHAR(255) NOT NULL , `action_taken_desc` VARCHAR(255) NOT NULL , `call_time_sec` INT NOT NULL ) ENGINE = InnoDB;");
+            PreparedStatement create = conn.prepareStatement("CREATE TABLE `kms`.`callout` (`callout_id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `surname` VARCHAR(255) NOT NULL , `patient_id` INT NOT NULL, `acc_desc` VARCHAR(255) NOT NULL , `datetime` TIMESTAMP NOT NULL , `location` VARCHAR(255) NOT NULL , `action_taken_desc` VARCHAR(255) NOT NULL , `call_time_sec` INT NOT NULL, PRIMARY KEY (`callout_id`), FOREIGN KEY (patient_id) REFERENCES Patient(id) ) ENGINE = InnoDB;");
             create.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
         }
-        finally{
-            System.out.println("Table created successfully.");
-        }
+
 
     }
 
-    public void insertCallout(Callout callout) {
+    public void insertCallout(CalloutInterface callout) {
+
+        Statement stmt;
+        ResultSet rs;
+        int patientId = 0;
+        try{
+            Connection conn = getConnection();
+
+            //PreparedStatement exist = conn.prepareStatement("SELECT * FROM patient WHERE id=(SELECT max(id) FROM patient)");
+            stmt = conn.createStatement();     // Create a Statement object           1
+            rs = stmt.executeQuery("SELECT * FROM patient WHERE id=(SELECT max(id) FROM patient)");
+
+            // Get the result table from the query
+            while (rs.next()) {               // Position the cursor
+                //            3
+                patientId = rs.getInt(1);
+
+                // Retrieve only the first column value
+
+
+
+            }
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
 
         try{
             Connection conn = getConnection();
 
-            PreparedStatement insert = conn.prepareStatement("INSERT INTO callout(id, name, surname,acc_desc, datetime, location,action_taken_desc,call_time_sec)" + "VALUES (?,?, ?, ?, ?, ?,?,?)");
+//            PreparedStatement create = conn.prepareStatement("CREATE TABLE `kms`.`callout` ( `name` VARCHAR(255) NOT NULL , `surname` VARCHAR(255) NOT NULL , `nhs_reg_no` INT NOT NULL, `acc_desc` VARCHAR(255) NOT NULL , `datetime` TIMESTAMP NOT NULL , `location` VARCHAR(255) NOT NULL , `action_taken_desc` VARCHAR(255) NOT NULL , `call_time_sec` INT NOT NULL ) ENGINE = InnoDB;");
+//            create.executeUpdate();
+
+            PreparedStatement insert = conn.prepareStatement("INSERT INTO Callout(callout_id, name, surname,patient_id,acc_desc, datetime, location,action_taken_desc,call_time_sec)" + "VALUES (?,?, ?, ?, ?, ?,?,?,?)");
 
             insert.setNull(1, 1);
             insert.setString(2, callout.getName());
             insert.setString(3, callout.getSurname());
-            insert.setString(4, callout.getAccDesc());
-            insert.setNull(5, 1);
-            insert.setString(6, callout.getLocation());
-            insert.setString(7, callout.getActionTakenDesc());
-            insert.setInt(8, callout.getCallTimeSec());
+            insert.setInt(4, patientId);
+            insert.setString(5, callout.getAccDesc());
+            insert.setNull(6, 1);
+            insert.setString(7, callout.getLocation());
+            insert.setString(8, callout.getActionTakenDesc());
+            insert.setInt(9, callout.getCallTimeSec());
 
             insert.executeUpdate();
 

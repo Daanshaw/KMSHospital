@@ -13,6 +13,10 @@ public interface CalloutInterface extends Remote {
 
     void setSurname(String surname) throws RemoteException;
 
+    int getNhsRegNo() throws RemoteException;
+
+    void setNhsRegNo(int nhsRegNo) throws RemoteException;
+
     String getAccDesc() throws RemoteException;
 
     void setAccDesc(String accDesc) throws RemoteException;
