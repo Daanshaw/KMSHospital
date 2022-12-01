@@ -26,4 +26,39 @@ public class PresentationTier {
         }
 
     }
+    void patientDetailsMsg(String name, String surname, int nhsNo, String address, String medicalCond) {
+
+        System.out.println(
+                "Name:'" + name + '\'' +
+                        ", Surname:'" + surname + '\'' +
+                        ", NHS Registration Number:" + nhsNo +
+                        ", Address:'" + address + '\'' +
+                        ", Medical Condition:'" + medicalCond);
+    }
+    void IOMsg() {
+
+        System.err.println("Error in I/O");
+    }
+
+    void noDataMsg() {
+
+        System.err.println("No available data show.");
+    }
+
+    void errorOcMsg() {
+
+        System.err.println("Error Occurred");
+    }
+
+    void calloutDetailsMsg(String name, String surname, int nhsNo, String accDesc, String location, String actionTaken, int callTime) {
+
+        System.out.println(
+                "Name:'" + name + '\'' +
+                        ", Surname:'" + surname + '\'' +
+                        ", NHS Registration Number:" + nhsNo +
+                        ", Accident description:'" + accDesc + '\'' +
+                        ", Accident's location:'" + location + '\'' +
+                ", Description of action taken:'" + actionTaken + '\'' +
+                ", Call time:'" + callTime);
+    }
 }

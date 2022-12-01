@@ -49,41 +49,28 @@ public class ApplicationTier {
             PatientInterface patient = (PatientInterface) registry.lookup("patient");
 
             // Display the current student details
-            System.out.println("Patient details:");
-            System.out.println("Name: " + patient.getName());
-            System.out.println("Surname: " + patient.getSurname());
-            System.out.println("NHS number: " + patient.getNhsRegistrationNo());
-            System.out.println("Address: " + patient.getAddress());
-            System.out.println("Medical condition: " + patient.getMedicalCondition());
+            pt.patientDetailsMsg(patient.getName(), patient.getSurname(), patient.getNhsRegistrationNo(), patient.getAddress(),patient.getMedicalCondition() );
 
 
 
 
-            // Create the remote version of the student object
-//            PatientInterface student_stub = (PatientInterface) UnicastRemoteObject.exportObject(patient, 0);
-//
-//            // Connect to the RMI Registry
-//            //Registry registry = LocateRegistry.getRegistry(ip);
-//
-//            // Declare the object with the registry
-//            registry.rebind("patient", student_stub);
-//            System.out.println("Patient data sent");
+
         }
         catch (IOException ioe)
         {
-            System.err.println("Error in I/O");
+            pt.IOMsg();
             System.err.println(ioe.getMessage());
             pt.presentationTier();
         }
         catch (NotBoundException nbe)
         {
-            System.err.println("No data to show.");
+            pt.noDataMsg();
             System.err.println(nbe.getMessage());
             pt.presentationTier();
         }
         catch (Exception e)
         {
-            System.err.println("Error Occurred");
+            pt.errorOcMsg();
             System.err.println(e.getMessage());
             pt.presentationTier();
         }
@@ -108,17 +95,10 @@ public class ApplicationTier {
             // Get the remotely declared student object
             CalloutInterface callout = (CalloutInterface) registry.lookup("callout");
 
-            // Display the current student details
-            System.out.println("Callout details:");
-            System.out.println("Name: " + callout.getName());
-            System.out.println("Surname: " + callout.getSurname());
-            System.out.println("NHS number: " + callout.getNhsRegNo());
-            System.out.println("Accident description:: " + callout.getAccDesc());
-            System.out.println("Accident's location: " + callout.getLocation());
-            System.out.println("Description of action taken: " + callout.getActionTakenDesc());
-            System.out.println("Call time: " + callout.getCallTimeSec());
+            // Display the current callout details
+            pt.calloutDetailsMsg(callout.getName(), callout.getSurname(), callout.getNhsRegNo(), callout.getAccDesc(),callout.getLocation(), callout.getActionTakenDesc(), callout.getCallTimeSec() );
 
-            dt.createTable();
+            //dt.createTable();
 
             dt.insertCallout(callout);
 
@@ -126,18 +106,16 @@ public class ApplicationTier {
         }
         catch (IOException ioe)
         {
-            System.err.println("Error in I/O");
+            pt.IOMsg();
             System.err.println(ioe.getMessage());
             pt.presentationTier();
         }
         catch (NotBoundException nbe)
         {
-            System.err.println("No data to show.");
+            pt.noDataMsg();
             System.err.println(nbe.getMessage());
             pt.presentationTier();
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 

@@ -1,0 +1,106 @@
+@startuml
+class Patient {
+- String name
+- String surname
+- int nhsRegistrationNo
+- String address
+- String medicalCondition
++ <<Create>> Patient(String,String,int,String,String)
++ String toString()
++ String getName()
++ void setName(String)
++ String getSurname()
++ void setSurname(String)
++ int getNhsRegistrationNo()
++ void setNhsRegistrationNo(int)
++ String getAddress()
++ void setAddress(String)
++ String getMedicalCondition()
++ void setMedicalCondition(String)
+}
+class ApplicationTier {
+~ PresentationTier pt
+~ void applicationTier()
++ void receivePatientsInfo()
+~ void receiveCalloutInfo()
+}
+class Callout {
+- String name
+- String surname
+- int nhsRegNo
+- String accDesc
+- Date datetime
+- String location
+- String actionTakenDesc
+- int callTimeSec
++ <<Create>> Callout(String,String,int,String,Date,String,String,int)
++ String toString()
++ String getName()
++ void setName(String)
++ String getSurname()
++ void setSurname(String)
++ int getNhsRegNo()
++ void setNhsRegNo(int)
++ String getAccDesc()
++ void setAccDesc(String)
++ Date getDatetime()
++ void setDatetime(Date)
++ String getLocation()
++ void setLocation(String)
++ String getActionTakenDesc()
++ void setActionTakenDesc(String)
++ int getCallTimeSec()
++ void setCallTimeSec(int)
+}
+class Hospital {
++ {static} void main(String[])
+}
+class PresentationTier {
++ void presentationTier()
+}
+interface PatientInterface {
++ String getName()
++ void setName(String)
++ String getSurname()
++ void setSurname(String)
++ int getNhsRegistrationNo()
++ void setNhsRegistrationNo(int)
++ String getAddress()
++ void setAddress(String)
++ String getMedicalCondition()
++ void setMedicalCondition(String)
+}
+interface CalloutInterface {
+~ String getName()
+~ void setName(String)
+~ String getSurname()
+~ void setSurname(String)
+~ int getNhsRegNo()
+~ void setNhsRegNo(int)
+~ String getAccDesc()
+~ void setAccDesc(String)
+~ Date getDatetime()
+~ void setDatetime(Date)
+~ String getLocation()
+~ void setLocation(String)
+~ String getActionTakenDesc()
+~ void setActionTakenDesc(String)
+~ int getCallTimeSec()
+~ void setCallTimeSec(int)
+}
+class DataTier {
++ {static} Connection getConnection()
++ void createTable()
++ void insertCallout(CalloutInterface)
+}
+
+
+java.io.Serializable <|.. Patient
+PatientInterface <|.. Patient
+java.rmi.Remote <|.. Patient
+java.io.Serializable <|.. Callout
+java.rmi.Remote <|.. Callout
+CalloutInterface <|.. Callout
+java.rmi.Remote <|-- PatientInterface
+java.rmi.Remote <|-- CalloutInterface
+@enduml
